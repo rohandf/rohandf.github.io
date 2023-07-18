@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css');
+/* <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css'> */
+
+@keyframes bg-scrolling{
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -40px -100px;
+    }
+}
 
 html,body{
     margin:0;
@@ -8,6 +19,7 @@ html,body{
 body{
     height: 100vh;
     background-image: url(curls.png);
+    animation: bg-scrolling 2s infinite linear;
     /* replace background color with animation */
 }
 /* SITE STYLES */
@@ -17,7 +29,7 @@ a{
 .header{
     position:sticky;
     display: flex;
-    width: calc(100vw - 6em)em; /* positions header bar nicely */
+    /* width: calc(100vw - 6em)em; positions header bar nicely */
     justify-content: space-between;
     top:0;
     margin-left: 2em;
@@ -29,25 +41,48 @@ a{
     /* height: 3.8em for measuring purposes only */
 }
 .header h1{
-    font-family: 'Source Code Pro', monospace;
+    font-family: Hack, monospace;
+    font-weight: lighter;
     margin-top:0.4em;
     margin-bottom:0.4em;
+    transition-duration: 0.2s;
+}
+.header h1:hover{
+    transform: rotateY(40deg) translate(0.5em);
+}
+.header a{
+    cursor: pointer;
+    user-select: none;
+    perspective: 3in;
 }
 .nav-bar{
     display:flex;
     align-items: center;
+    perspective: 4in;
 }
 .nav-bar a{
-    font-family: 'Source Code Pro', monospace;
+    cursor: pointer;
+    font-family: Hack, monospace;
     padding-left: 1em;
+    user-select: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-decoration: overline underline black 0.7em;
+    transition-duration: 0.2s;
+}
+.nav-bar a:hover{
+    text-decoration: overline underline white 0.1em;
 }
 .content{
-    width: calc(100vw - 6em); /* aligns with header */
+    /* width: calc(100vw - 6em); aligns with header */
     height: calc(100dvh - 3.8em);
-    bottom: 0px;
-    background-color: #222222;
+    background-color: #131313f3;
     margin-left: 2em;
     margin-right: 2em;
     padding-left: 1em;
     padding-right: 1em;
+}
+.content *{
+    font-family: Hack, monospace;
+    color:white
 }
