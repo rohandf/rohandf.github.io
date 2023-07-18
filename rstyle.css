@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+html,body{
+    margin:0;
+    min-width: 800px;
+    width: 100%;
+}
+body{
+    height: 100vh;
+    background-image: url(curls.png);
+    /* replace background color with animation */
+}
+/* SITE STYLES */
+a{
+    all:unset;
+}
+.header{
+    position:sticky;
+    display: flex;
+    width: calc(100vw - 6em)em; /* positions header bar nicely */
+    justify-content: space-between;
+    top:0;
+    margin-left: 2em;
+    margin-right: 2em;
+    background-color: black;
+    color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    /* height: 3.8em for measuring purposes only */
+}
+.header h1{
+    font-family: 'Source Code Pro', monospace;
+    margin-top:0.4em;
+    margin-bottom:0.4em;
+}
+.nav-bar{
+    display:flex;
+    align-items: center;
+}
+.nav-bar a{
+    font-family: 'Source Code Pro', monospace;
+    padding-left: 1em;
+}
+.content{
+    width: calc(100vw - 6em); /* aligns with header */
+    height: calc(100dvh - 3.8em);
+    bottom: 0px;
+    background-color: #222222;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
