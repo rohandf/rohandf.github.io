@@ -19,7 +19,7 @@ html,body{
 body{
     height: 100vh;
     background-image: url(curls.png);
-    animation: bg-scrolling 2s infinite linear;
+    animation: bg-scrolling 10s infinite linear;
     /* replace background color with animation */
 }
 /* SITE STYLES */
@@ -45,23 +45,25 @@ a{
     font-weight: lighter;
     margin-top:0.4em;
     margin-bottom:0.4em;
-    transition-duration: 0.2s;
-}
-.header h1:hover{
-    transform: rotateY(40deg) translate(0.5em);
 }
 .header a{
-    cursor: pointer;
+    transition-duration: 0.2s;
+    cursor: crosshair;
     user-select: none;
-    perspective: 3in;
+}
+.header a:hover{
+    transform: perspective(3in) rotateY(40deg) translate(0.5em);
+}
+.header a:hover ~ .nav-bar{
+    transform: perspective(3in) rotateY(-40deg) translate(-0.5em);
 }
 .nav-bar{
     display:flex;
     align-items: center;
-    perspective: 4in;
+    transition-duration: 0.2s;
 }
 .nav-bar a{
-    cursor: pointer;
+    cursor: crosshair;
     font-family: Hack, monospace;
     padding-left: 1em;
     user-select: none;
@@ -72,17 +74,28 @@ a{
 }
 .nav-bar a:hover{
     text-decoration: overline underline white 0.1em;
+    transform: perspective(5in) rotateY(-40deg) translate(-0.5em) scale(1.5);
 }
 .content{
     /* width: calc(100vw - 6em); aligns with header */
     height: calc(100dvh - 3.8em);
-    background-color: #131313f3;
+    background-color: #252525c2;
     margin-left: 2em;
     margin-right: 2em;
     padding-left: 1em;
     padding-right: 1em;
+    backdrop-filter: blur(3px);
 }
 .content *{
     font-family: Hack, monospace;
-    color:white
+    color:white;
+    text-shadow: 0px 2px 4px black;
+}
+.li-link{
+    cursor:crosshair;
+    color:rgb(71, 71, 255);
+    transition-duration: 0.2s;
+}
+.li-link:hover{
+    color:rgb(149, 149, 255);
 }
